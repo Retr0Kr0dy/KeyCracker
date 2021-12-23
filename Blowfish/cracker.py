@@ -20,18 +20,15 @@ for z in range(1, 10000000):
         data_result = b"".join(hashnsalt.decrypt_cfb(text_block, iv))
     except:
         print(f'FUCKKK {z}')    
-    print(f'For key: {key} iv: {iv}; done : {data_result}')
-    la_phrase = f'For key: {key} iv: {iv}; done : {data_result}'
-    command = f'cmd /c "echo {la_phrase} >> {output_path} "'
     try:
         chad = data_result.decode('utf-8')
         print (chad) 
         if "this" in chad:
+            la_phrase = f'For key: {key} iv: {iv}; done : {data_result}'
+            command = f'cmd /c "echo {la_phrase} >> {output_path} "'
             os.system(command)
             print ("DONE")
             exit(-1)
-        else:
-            print("you madafaka")
     except:
-        print(f"LIGMA {z}")
+        print(f"LIGMA {z} ; {data_result}")
     z = z + 1 
