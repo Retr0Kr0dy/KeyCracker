@@ -6,7 +6,17 @@ import os
 
 file_to_crypt = input ("\nEnter the name of the file to crack :")
 output = input ("\nEnter the name of output file :")
-number = int(input("\nEnter key lenght : "))
+def take_number():
+    global number_input
+    number_input = input("\nEnter key lenght : ")
+    if len(number_input) == 0:
+        # def randStar(chars = string.ascii_uppercase + string.digits, N=number):
+        #     return ''.join(random.choice(chars) for _ in range(N))
+        # word_key = randStar(chars='1234567890')
+        print("lol")
+    else:
+        number = int(number_input)
+take_number()
 def take_letter():
     global letter
     letter = input("\nEnter possible alphabet (leave empty for help) :")
@@ -25,6 +35,8 @@ output_path = cwd + "\\" + output
 z = 0
 for z in range(1, 100000000) :
     i = 0
+    if len(number_input) == 0:
+        number = random.randint(1, 15)
     def randStr(chars = string.ascii_uppercase + string.digits, N=number):
         return ''.join(random.choice(chars) for _ in range(N))
     word_key = randStr(chars=letter)
