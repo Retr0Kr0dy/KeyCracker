@@ -43,7 +43,7 @@ for z in range(1, 100000000) :
     la_phrase = f'For key : {word_key} ; done : {text_block_2}'
     command = f'cmd /c "echo {la_phrase} >> {output_path} "'
     try:
-        chad = text_block_2.decode('utf-8')
+        chad = text_block_2.decode('ascii')
         print ("\n" + chad) 
         print(f"\nfor key {word_key} LIGMA {z}")
         input ("\nKey Cracked!!!(press enter to exit)")
